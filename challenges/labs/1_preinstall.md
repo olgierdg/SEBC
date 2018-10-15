@@ -7,7 +7,18 @@
 vm.swappiness = 1
 [centos@ip-172-31-38-172 ~]$ cat /proc/sys/vm/swappiness
 1
-[centos@ip-172-31-38-172 ~]$
+[root@ip-172-31-38-172 ~]# echo "vm.swappiness = 1" >> /etc/sysctl.conf
+[root@ip-172-31-38-172 ~]# tail /etc/sysctl.conf
+# Controls the maximum size of a message, in bytes
+kernel.msgmax = 65536
+
+# Controls the maximum shared segment size, in bytes
+kernel.shmmax = 68719476736
+
+# Controls the maximum number of shared memory segments, in pages
+kernel.shmall = 4294967296
+vm.swappiness = 1
+[root@ip-172-31-38-172 ~]#
 ```
 
 # 2 Mount Attributes 
