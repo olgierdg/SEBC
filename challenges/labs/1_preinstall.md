@@ -183,6 +183,9 @@ Authoritative answers can be found from:
 # 7 nscd
 
 ```
+[root@ip-172-31-38-172 ~]# service nscd status
+nscd (pid 1922) is running...
+[root@ip-172-31-38-172 ~]# 
 [root@ip-172-31-38-172 ~]# nscd -g
 nscd configuration:
 
@@ -320,6 +323,7 @@ SELinux AVC Statistics:
               0  CAV hits
               0  CAV probes
               1  CAV misses
+[root@ip-172-31-38-172 ~]# 
 [root@ip-172-31-38-172 ~]# time nslookup ip-172-31-38-172.eu-central-1.compute.internal
 Server:         172.31.0.2
 Address:        172.31.0.2#53
@@ -338,6 +342,9 @@ sys     0m0.002s
 # 8 ntpd (actually chrony, because it's AWS)
 
 ```
+[root@ip-172-31-38-172 ~]# service chronyd status
+chronyd (pid  1795) is running...
+[root@ip-172-31-38-172 ~]# 
 [root@ip-172-31-38-172 ~]# chronyc sources -v
 210 Number of sources = 1
 
@@ -352,6 +359,7 @@ sys     0m0.002s
 MS Name/IP address         Stratum Poll Reach LastRx Last sample
 ===============================================================================
 ^* 169.254.169.123               3   6   177     1   -230ns[ -147us] +/-  641us
+[root@ip-172-31-38-172 ~]# 
 [root@ip-172-31-38-172 ~]# chronyc tracking
 Reference ID    : 169.254.169.123 (169.254.169.123)
 Stratum         : 4
