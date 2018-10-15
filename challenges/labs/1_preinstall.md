@@ -1,4 +1,4 @@
-# 1
+# 1 Swappiness
 
 ```
 [centos@ip-172-31-38-172 ~]$ cat /proc/sys/vm/swappiness
@@ -10,7 +10,7 @@ vm.swappiness = 1
 [centos@ip-172-31-38-172 ~]$
 ```
 
-# 2
+# 2 Mount Attributes 
 
 ```
 [root@ip-172-31-38-172 ~]# mount
@@ -43,7 +43,7 @@ proc                    /proc                   proc    defaults        0 0
 
 ```
 
-# 3
+# 3 Reserve space
 
 ```
 [root@ip-172-31-38-172 ~]# lsblk
@@ -63,7 +63,7 @@ tmpfs           7.8G     0  7.8G   0% /dev/shm
 
 ```
 
-# 4
+# 4 Transparent Hugepage Support
 
 ```
 [root@ip-172-31-38-172 ~]# cat /sys/kernel/mm/redhat_transparent_hugepage/defrag
@@ -104,7 +104,7 @@ echo never > /sys/kernel/mm/transparent_hugepage/defrag
 [root@ip-172-31-38-172 ~]#
 ```
 
-# 5
+# 5 Network Interfaces
 
 ```
 [root@ip-172-31-38-172 ~]# ifconfig
@@ -129,7 +129,7 @@ lo        Link encap:Local Loopback
 [root@ip-172-31-38-172 ~]#
 ```
 
-# 6
+# 6 Forward and Reverse Host Lookups 
 
 Public DNS name:
 
@@ -180,7 +180,7 @@ Authoritative answers can be found from:
 [root@ip-172-31-38-172 ~]# 
 ```
 
-# 7
+# 7 nscd
 
 ```
 [root@ip-172-31-38-172 ~]# nscd -g
@@ -320,10 +320,22 @@ SELinux AVC Statistics:
               0  CAV hits
               0  CAV probes
               1  CAV misses
+[root@ip-172-31-38-172 ~]# time nslookup ip-172-31-38-172.eu-central-1.compute.internal
+Server:         172.31.0.2
+Address:        172.31.0.2#53
+
+Non-authoritative answer:
+Name:   ip-172-31-38-172.eu-central-1.compute.internal
+Address: 172.31.38.172
+
+
+real    0m0.006s
+user    0m0.002s
+sys     0m0.002s
 [root@ip-172-31-38-172 ~]#
 ```
 
-# 8
+# 8 ntpd (actually chrony, because it's AWS)
 
 ```
 [root@ip-172-31-38-172 ~]# chronyc sources -v
