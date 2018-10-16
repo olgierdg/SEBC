@@ -15,30 +15,6 @@ ec2-3-120-225-216.eu-central-1.compute.amazonaws.com | CHANGED | rc=0 >>
 
 
 ec2-3-120-244-147.eu-central-1.compute.amazonaws.com | CHANGED | rc=0 >>
-
-
-bash-4.4$ ansible -i hosts all --user centos --private-key /Users/o.grodzki/.ssh/olaf-keypair.pem -c paramiko --become -m shell -a 'echo "olgierdg" | passwd --stdin olgierdg'
-ec2-35-157-195-83.eu-central-1.compute.amazonaws.com | CHANGED | rc=0 >>
-Changing password for user olgierdg.
-passwd: all authentication tokens updated successfully.
-
-ec2-3-120-225-216.eu-central-1.compute.amazonaws.com | CHANGED | rc=0 >>
-Changing password for user olgierdg.
-passwd: all authentication tokens updated successfully.
-
-ec2-3-120-244-147.eu-central-1.compute.amazonaws.com | CHANGED | rc=0 >>
-Changing password for user olgierdg.
-passwd: all authentication tokens updated successfully.
-
-ec2-35-159-51-248.eu-central-1.compute.amazonaws.com | CHANGED | rc=0 >>
-Changing password for user olgierdg.
-passwd: all authentication tokens updated successfully.
-
-ec2-18-196-102-174.eu-central-1.compute.amazonaws.com | CHANGED | rc=0 >>
-Changing password for user olgierdg.
-passwd: all authentication tokens updated successfully.
-
-bash-4.4$
 ```
 
 # Create a home HDFS directory for this user as well
