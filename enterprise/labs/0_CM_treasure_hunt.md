@@ -52,3 +52,5 @@ Using the command line you in short you:
 * The KDC should be configured to have non-zero ticket lifetime and renewal lifetime.
 * OpenLdap client libraries should be installed on the Cloudera Manager Server host if you want to use Active Directory. Also, Kerberos client libraries should be installed on ALL hosts.
 * Cloudera Manager needs an account that has permissions to create other accounts in the KDC.
+* By default, CentOS and Red Hat Enterprise Linux 5.5 (and higher) use AES-256 encryption for Kerberos tickets, so the Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy File must be installed on all cluster hosts as detailed below. Alternatively, the Kerberos instance can be modified to not use AES-256.
+* If an administrator principal to act on behalf of Cloudera Manager cannot be created on the Kerberos KDC for whatever reason, Cloudera Manager will not be able to create or manage principals and keytabs for CDH services. That means these principals must be created manually on the Kerberos KDC and then imported (retrieved) by Cloudera Manager.

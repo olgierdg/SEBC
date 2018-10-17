@@ -1,3 +1,7 @@
+```bash
+curl -u olgierdg:cloudera 'http://ec2-3-120-225-216.eu-central-1.compute.amazonaws.com:7180/api/v12/cm/deployment'
+```
+
 ```json
 {
   "timestamp" : "2018-10-16T14:57:49.743Z",
